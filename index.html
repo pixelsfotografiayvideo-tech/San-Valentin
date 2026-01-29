@@ -26,9 +26,15 @@
             font-family: 'TheSeasons';
             src: url('https://res.cloudinary.com/drrhn6t1c/raw/upload/v1755826797/Fontspring-DEMO-theseasons-reg_evnlrs.otf') format('opentype');
         }
-        body { font-family: 'Inter', sans-serif; background-color: #f8f7f3; scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #f8f7f3; scroll-behavior: smooth; overflow-x: hidden; }
         h1, h2, h3 { font-family: 'TheSeasons', serif; }
         
+        /* Tamaño de fuente fluido para el H1: mínimo 1.5rem, ideal 5vw, máximo 4rem */
+        .responsive-h1 { 
+            font-size: clamp(1.5rem, 5.5vw, 4rem); 
+            white-space: nowrap;
+        }
+
         .hero-bg {
             background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/dgo3agrzb/image/upload/v1756332995/pixels_Fotografia_y_Video-2_lfan0v.jpg');
             background-size: cover; background-position: center;
@@ -53,7 +59,7 @@
         }
         .plan-card-back {
             background: white; transform: rotateY(180deg);
-            display: flex; flex-direction: column; padding: 2rem;
+            display: flex; flex-direction: column; padding: 1.5rem;
             border: 1px solid #e2e2e2;
         }
 
@@ -72,40 +78,40 @@
     <header class="hero-bg min-h-screen flex items-center justify-center p-4">
         <div class="glass-card p-6 md:p-20 max-w-6xl w-full text-center text-white reveal active">
             <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1769649975/logo_blanco_y_sin_fondo_1_-_copia_xggzpl.png" 
-                 alt="Pixels Logo" class="w-32 md:w-48 mx-auto mb-8">
+                 alt="Pixels Logo" class="w-24 md:w-48 mx-auto mb-6">
             
-            <h1 class="text-3xl md:text-6xl mb-6 uppercase whitespace-nowrap tracking-tight md:tracking-normal">El plan perfecto para dos.</h1>
-            <p class="text-base md:text-lg mb-10 max-w-xl mx-auto font-light leading-relaxed">Capturamos la esencia de su relación en una sesión relajada. Sin estrés, sin guiones; solo tú, tu pareja y lo que los hace únicos..</p>
-            <a href="#planes" class="bg-white text-black px-10 py-4 rounded-xl font-bold uppercase text-sm tracking-widest inline-block hover:bg-gray-100 transition">Ver Planes</a>
+            <h1 class="responsive-h1 mb-6 uppercase tracking-tight">El plan perfecto para dos.</h1>
+            <p class="text-sm md:text-lg mb-10 max-w-xl mx-auto font-light leading-relaxed">Capturamos la esencia de su relación en una sesión relajada. Sin estrés, sin guiones; solo tú, tu pareja y lo que los hace únicos..</p>
+            <a href="#planes" class="bg-white text-black px-8 py-3 md:px-10 md:py-4 rounded-xl font-bold uppercase text-xs md:text-sm tracking-widest inline-block hover:bg-gray-100 transition">Ver Planes</a>
         </div>
     </header>
 
-    <section id="planes" class="py-24 px-6 max-w-7xl mx-auto text-center">
-        <h2 class="text-5xl mb-4">Planes 2026</h2>
-        <p class="text-gray-500 mb-16 italic font-light">Haz clic sobre un plan para ver los detalles.</p>
+    <section id="planes" class="py-16 md:py-24 px-4 max-w-7xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl mb-4">Planes 2026</h2>
+        <p class="text-gray-500 mb-12 md:mb-16 italic font-light">Haz clic sobre un plan para ver los detalles.</p>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             <div class="plan-card reveal" onclick="this.classList.toggle('is-flipped')">
                 <div class="plan-card-inner">
                     <div class="plan-card-front shadow-lg">
-                        <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1756770095/pixels_Fotografia_y_Video-39_zlyzcv.jpg" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-center">
+                        <img src="https://res.cloudinary.com/drrhn6t1c/image/upload/v1756832432/sart-insta-2_v9kmil.jpg" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/30 flex flex-col items-center justify-center">
                             <h3 class="text-white text-3xl uppercase tracking-widest">Plan Piloto</h3>
                             <p class="text-white/70 text-[10px] tracking-[0.2em] mt-2 uppercase">Gira aquí</p>
                         </div>
                     </div>
                     <div class="plan-card-back text-center">
-                        <h3 class="text-2xl uppercase mb-2">Plan Piloto</h3>
-                        <p class="text-gray-400 text-xs italic mb-4">""El tráiler perfecto: rápido, intenso y lleno de amor.""</p>
-                        <p class="text-3xl font-bold mb-6">$65.000 <span class="text-sm font-normal text-gray-400">ARS</span></p>
-                        <div class="text-left text-sm space-y-3 mb-8 flex-grow text-gray-600 font-sans">
+                        <h3 class="text-xl md:text-2xl uppercase mb-2">Plan Piloto</h3>
+                        <p class="text-gray-400 text-[10px] md:text-xs italic mb-4">""El tráiler perfecto: rápido, intenso y lleno de amor.""</p>
+                        <p class="text-2xl md:text-3xl font-bold mb-6">$65.000 <span class="text-xs md:text-sm font-normal text-gray-400">ARS</span></p>
+                        <div class="text-left text-xs md:text-sm space-y-3 mb-8 flex-grow text-gray-600 font-sans">
                             <p class="check-item">Sesión en exterior</p>
                             <p class="check-item">Sesión de 45 min</p>
-                            <p class="check-item">100 fotos editadas (digitales)</p>
+                            <p class="check-item">100 fotos editadas</p>
                             <p class="check-item">Galería Online</p>
                         </div>
-                        <a href="https://wa.me/3517364379?text=Hola! Quiero reservar el Plan Piloto" class="block w-full py-4 bg-terciary text-white rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-opacity-90 transition">Reservar</a>
+                        <a href="https://wa.me/3517364379?text=Hola! Quiero reservar el Plan Piloto" class="block w-full py-3 bg-terciary text-white rounded-xl font-bold uppercase tracking-widest text-[10px] hover:bg-opacity-90 transition">Reservar</a>
                     </div>
                 </div>
             </div>
@@ -113,25 +119,25 @@
             <div class="plan-card reveal" onclick="this.classList.toggle('is-flipped')">
                 <div class="plan-card-inner">
                     <div class="plan-card-front shadow-lg">
-                        <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1769654997/Pixels_Fotograf%C3%ADa_y_Video-2_mdp7jo.jpg" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-center">
+                        <img src="https://res.cloudinary.com/drrhn6t1c/image/upload/v1756833314/sart-insta-36_engkrd.jpg" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/30 flex flex-col items-center justify-center">
                             <h3 class="text-white text-3xl uppercase tracking-widest">Plan Secuela</h3>
                             <p class="text-white/70 text-[10px] tracking-[0.2em] mt-2 uppercase">Gira aquí</p>
                         </div>
                     </div>
                     <div class="plan-card-back text-center relative border-2 border-terciary">
-                        <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-terciary text-white text-[10px] px-4 py-1 rounded-b-lg font-bold uppercase">Más Popular</div>
-                        <h3 class="text-2xl uppercase mt-4 mb-2">Plan Secuela</h3>
-                        <p class="text-gray-400 text-xs italic mb-4">""La gran producción: cada detalle de su historia en fotos.""</p>
-                        <p class="text-3xl font-bold mb-6">$95.000 <span class="text-sm font-normal text-gray-400">ARS</span></p>
-                        <div class="text-left text-sm space-y-3 mb-8 flex-grow text-gray-600 font-sans">
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-terciary text-white text-[9px] px-3 py-1 rounded-b-lg font-bold uppercase">Más Popular</div>
+                        <h3 class="text-xl md:text-2xl uppercase mt-4 mb-2">Plan Secuela</h3>
+                        <p class="text-gray-400 text-[10px] md:text-xs italic mb-4">""La gran producción.""</p>
+                        <p class="text-2xl md:text-3xl font-bold mb-6">$95.000 <span class="text-xs md:text-sm font-normal text-gray-400">ARS</span></p>
+                        <div class="text-left text-xs md:text-sm space-y-3 mb-8 flex-grow text-gray-600 font-sans">
                             <p class="check-item">Sesión en exterior</p>
                             <p class="check-item">Sesión de 1hr</p>
-                            <p class="check-item">200 fotos editadas (digitales)</p>
+                            <p class="check-item">200 fotos editadas</p>
                             <p class="check-item">Galería Online</p>
-                            <p class="check-item">3 Fotos Polaroid (Impresas)</p>
+                            <p class="check-item">3 Fotos Polaroid</p>
                         </div>
-                        <a href="https://wa.me/3517364379?text=Hola! Quiero reservar el Plan Secuela" class="block w-full py-4 bg-terciary text-white rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-opacity-90 transition">Reservar</a>
+                        <a href="https://wa.me/3517364379?text=Hola! Quiero reservar el Plan Secuela" class="block w-full py-3 bg-terciary text-white rounded-xl font-bold uppercase tracking-widest text-[10px] hover:bg-opacity-90 transition">Reservar</a>
                     </div>
                 </div>
             </div>
@@ -139,23 +145,23 @@
             <div class="plan-card reveal" onclick="this.classList.toggle('is-flipped')">
                 <div class="plan-card-inner">
                     <div class="plan-card-front shadow-lg">
-                        <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1769654997/Pixels_Fotograf%C3%ADa_y_Video-19_apdzeo.jpg" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-center">
+                        <img src="https://res.cloudinary.com/drrhn6t1c/image/upload/v1756832323/save-the-date-syb-46_oqd5kn.jpg" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/30 flex flex-col items-center justify-center">
                             <h3 class="text-white text-3xl uppercase tracking-widest">Plan Trilogía</h3>
                             <p class="text-white/70 text-[10px] tracking-[0.2em] mt-2 uppercase">Gira aquí</p>
                         </div>
                     </div>
                     <div class="plan-card-back text-center">
-                        <h3 class="text-2xl uppercase mb-2">Plan Trilogía</h3>
-                        <p class="text-gray-400 text-xs italic mb-4">""El pase VIP: regala hoy la experiencia y vívanla mañana.""</p>
-                        <p class="text-3xl font-bold mb-6">$50.000 <span class="text-sm font-normal text-gray-400">ARS</span></p>
-                        <div class="text-left text-sm space-y-3 mb-8 flex-grow text-gray-600 font-sans">
+                        <h3 class="text-xl md:text-2xl uppercase mb-2">Plan Trilogía</h3>
+                        <p class="text-gray-400 text-[10px] md:text-xs italic mb-4">""El pase VIP.""</p>
+                        <p class="text-2xl md:text-3xl font-bold mb-6">$50.000 <span class="text-xs md:text-sm font-normal text-gray-400">ARS</span></p>
+                        <div class="text-left text-xs md:text-sm space-y-3 mb-8 flex-grow text-gray-600 font-sans">
                             <p class="check-item">Sesión en exterior</p>
                             <p class="check-item">Sesión de 35 Min</p>
-                            <p class="check-item">80 fotos editadas (digitales)</p>
+                            <p class="check-item">80 fotos editadas</p>
                             <p class="check-item">Galería Online</p>
                         </div>
-                        <a href="https://wa.me/3517364379?text=Hola! Quiero reservar el Plan Trilogía" class="block w-full py-4 bg-terciary text-white rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-opacity-90 transition">Reservar</a>
+                        <a href="https://wa.me/3517364379?text=Hola! Quiero reservar el Plan Trilogía" class="block w-full py-3 bg-terciary text-white rounded-xl font-bold uppercase tracking-widest text-[10px] hover:bg-opacity-90 transition">Reservar</a>
                     </div>
                 </div>
             </div>
@@ -165,14 +171,14 @@
 
     <section class="pb-24 px-4 reveal">
         <div class="masonry">
-            <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1769654994/Pixels_Fotograf%C3%ADa_y_Video-5_mjl0qx.jpg">
-            <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1769654994/Pixels_Fotograf%C3%ADa_y_Video-3_txjfeo.jpg">
-            <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1769654995/Pixels_Fotograf%C3%ADa_y_Video-9_f7nhq3.jpg">
-            <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1769654997/Pixels_Fotograf%C3%ADa_y_Video-17_n6ugkb.jpg">
-            <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1769654997/Pixels_Fotograf%C3%ADa_y_Video_fblvtf.jpg">
-            <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1769654996/Pixels_Fotograf%C3%ADa_y_Video-14_suqssu.jpg">
-            <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1769654995/Pixels_Fotograf%C3%ADa_y_Video-11_n8ugfe.jpg">
-            <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1769654993/Pixels_Fotograf%C3%ADa_y_Video-4_ienqu5.jpg">
+            <img src="https://res.cloudinary.com/drrhn6t1c/image/upload/v1756832323/save-the-date-syb-36_mnjhkr.jpg">
+            <img src="https://res.cloudinary.com/drrhn6t1c/image/upload/v1756833526/sart-insta-10_hnsiav.jpg">
+            <img src="https://res.cloudinary.com/drrhn6t1c/image/upload/v1756833522/sart-insta-23_ww6vqy.jpg">
+            <img src="https://res.cloudinary.com/drrhn6t1c/image/upload/v1756833316/sart-insta-3_el3zww.jpg">
+            <img src="https://res.cloudinary.com/drrhn6t1c/image/upload/v1756833314/sart-insta-36_engkrd.jpg">
+            <img src="https://res.cloudinary.com/drrhn6t1c/image/upload/v1756833313/sart-insta-28_z2gzey.jpg">
+            <img src="https://res.cloudinary.com/drrhn6t1c/image/upload/v1756833314/sart-insta-30_suuqbe.jpg">
+            <img src="https://res.cloudinary.com/drrhn6t1c/image/upload/v1756833266/sart-insta-27_b18x5q.jpg">
         </div>
     </section>
 
